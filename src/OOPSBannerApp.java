@@ -1,37 +1,32 @@
 /**
  * OOPSBannerApp
  *
- * UC3: Refactor banner creation using String.join()
- * to improve memory efficiency and avoid unnecessary
- * intermediate String objects created by + operator.
+ * UC4: Refactor banner using String array and enhanced for-loop
+ * to improve modularity, maintainability, and scalability.
  *
  * @author karansurjith
- * @version 3.0
+ * @version 4.0
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        System.out.println(String.join("",
-                " *****   ", " *****   ", " *****   ", " ***** "));
+        // Store all banner lines inside an array
+        String[] banner = {
 
-        System.out.println(String.join("",
-                "*     * ", "*     * ", "*     * ", "*     *"));
+            String.join("", " *****   ", " *****   ", " *****   ", " ***** "),
+            String.join("", "*     * ", "*     * ", "*     * ", "*     *"),
+            String.join("", "*     * ", "*     * ", "*     * ", "*      "),
+            String.join("", "*     * ", "*     * ", " *****   ", " *****  "),
+            String.join("", "*     * ", "*     * ", "*        ", "       "),
+            String.join("", "*     * ", "*     * ", "*        ", "       "),
+            String.join("", " *****   ", " *****   ", "*        ", " ***** ")
+        };
 
-        System.out.println(String.join("",
-                "*     * ", "*     * ", "*     * ", "*      "));
-
-        System.out.println(String.join("",
-                "*     * ", "*     * ", " *****   ", " *****  "));
-
-        System.out.println(String.join("",
-                "*     * ", "*     * ", "*        ", "       "));
-
-        System.out.println(String.join("",
-                "*     * ", "*     * ", "*        ", "       "));
-
-        System.out.println(String.join("",
-                " *****   ", " *****   ", "*        ", " ***** "));
+        // Print banner using enhanced for-loop
+        for (String line : banner) {
+            System.out.println(line);
+        }
     }
 }
