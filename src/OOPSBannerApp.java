@@ -91,3 +91,75 @@ public class OOPSBannerUC6 {
         }
     }
 }
+/**
+ * OOPSBannerApp
+ *
+ * UC7: Encapsulate ASCII patterns in CharacterPattern class
+ * for modularity, reusability, and scalability.
+ *
+ * Author: karansurjith
+ * Version: 7.0
+ */
+
+public class OOPSBannerApp {
+
+    // Static inner class to map character to banner pattern
+    static class CharacterPattern {
+        private char character;
+        private String[] pattern;
+
+        public CharacterPattern(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public String[] getPattern() {
+            return pattern;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Define patterns for O, P, S
+        CharacterPattern O = new CharacterPattern('O', new String[]{
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
+        });
+
+        CharacterPattern P = new CharacterPattern('P', new String[]{
+                "***** ",
+                "*    *",
+                "*    *",
+                "***** ",
+                "*     ",
+                "*     ",
+                "*     "
+        });
+
+        CharacterPattern S = new CharacterPattern('S', new String[]{
+                " *****",
+                "*     ",
+                "*     ",
+                " *****",
+                "     *",
+                "     *",
+                "***** "
+        });
+
+        // Store characters in order for "OOPS"
+        CharacterPattern[] word = {O, O, P, S};
+
+        // Print banner line by line
+        for (int line = 0; line < 7; line++) {
+            StringBuilder sb = new StringBuilder();
+            for (CharacterPattern c : word) {
+                sb.append(c.getPattern()[line]).append("  "); // space between letters
+            }
+            System.out.println(sb.toString());
+        }
+    }
+}
