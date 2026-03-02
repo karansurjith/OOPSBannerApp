@@ -1,20 +1,19 @@
 /**
  * OOPSBannerApp
  *
- * UC4: Refactor banner using String array and enhanced for-loop
- * to improve modularity, maintainability, and scalability.
+ * UC5: Combine array declaration and initialization
+ * using String.join() for concise and readable code.
  *
  * @author karansurjith
- * @version 4.0
+ * @version 5.0
  */
 
 public class OOPSBannerApp {
 
     public static void main(String[] args) {
 
-        // Store all banner lines inside an array
+        // Array declaration + initialization in a single statement
         String[] banner = {
-
             String.join("", " *****   ", " *****   ", " *****   ", " ***** "),
             String.join("", "*     * ", "*     * ", "*     * ", "*     *"),
             String.join("", "*     * ", "*     * ", "*     * ", "*      "),
@@ -24,7 +23,7 @@ public class OOPSBannerApp {
             String.join("", " *****   ", " *****   ", "*        ", " ***** ")
         };
 
-        // Print banner using enhanced for-loop
+        // Enhanced for-loop to print banner
         for (String line : banner) {
             System.out.println(line);
         }
