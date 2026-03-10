@@ -1,91 +1,61 @@
-/**
- * OOPSBannerApp
- *
- * UC5: Combine array declaration and initialization
- * using String.join() for concise and readable code.
- *
- * @author karansurjith
- * @version 5.0
- */
-
-public class OOPSBannerApp {
-
-    public static void main(String[] args) {
-
-        // Array declaration + initialization in a single statement
-        String[] banner = {
-            String.join("", " *****   ", " *****   ", " *****   ", " ***** "),
-            String.join("", "*     * ", "*     * ", "*     * ", "*     *"),
-            String.join("", "*     * ", "*     * ", "*     * ", "*      "),
-            String.join("", "*     * ", "*     * ", " *****   ", " *****  "),
-            String.join("", "*     * ", "*     * ", "*        ", "       "),
-            String.join("", "*     * ", "*     * ", "*        ", "       "),
-            String.join("", " *****   ", " *****   ", "*        ", " ***** ")
-        };
-
-        // Enhanced for-loop to print banner
-        for (String line : banner) {
-            System.out.println(line);
-        }
-    }
-}
 public class OOPSBannerUC6 {
 
-    // Helper method to generate pattern for 'O'
+    // Method to generate pattern for 'O'
     public static String[] getOPattern() {
         return new String[]{
-                String.join("", "  *****  "),
-                String.join("", " *     * "),
-                String.join("", "*       *"),
-                String.join("", "*       *"),
-                String.join("", "*       *"),
-                String.join("", " *     * "),
-                String.join("", "  *****  ")
+                " ***** ",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                "*     *",
+                " ***** "
         };
     }
 
-    // Helper method to generate pattern for 'P'
+    // Method to generate pattern for 'P'
     public static String[] getPPattern() {
         return new String[]{
-                String.join("", "*******  "),
-                String.join("", "*      * "),
-                String.join("", "*      * "),
-                String.join("", "*******  "),
-                String.join("", "*        "),
-                String.join("", "*        "),
-                String.join("", "*        ")
+                "****** ",
+                "*     *",
+                "*     *",
+                "****** ",
+                "*      ",
+                "*      ",
+                "*      "
         };
     }
 
-    // Helper method to generate pattern for 'S'
+    // Method to generate pattern for 'S'
     public static String[] getSPattern() {
         return new String[]{
-                String.join("", " ******  "),
-                String.join("", "*        "),
-                String.join("", "*        "),
-                String.join("", " *****   "),
-                String.join("", "      *  "),
-                String.join("", "      *  "),
-                String.join("", " ******  ")
+                " ***** ",
+                "*      ",
+                "*      ",
+                " ***** ",
+                "      *",
+                "      *",
+                " ***** "
         };
     }
 
     public static void main(String[] args) {
 
-        // Populate banner using methods
+        // Get patterns using static methods
         String[] o1 = getOPattern();
         String[] o2 = getOPattern();
         String[] p = getPPattern();
         String[] s = getSPattern();
 
-        // Assemble banner
+        // Banner array
         String[] banner = new String[7];
 
+        // Build banner
         for (int i = 0; i < 7; i++) {
-            banner[i] = o1[i] + " " + o2[i] + " " + p[i] + " " + s[i];
+            banner[i] = o1[i] + "  " + o2[i] + "  " + p[i] + "  " + s[i];
         }
 
-        // Enhanced for loop to print banner
+        // Print banner
         for (String line : banner) {
             System.out.println(line);
         }
